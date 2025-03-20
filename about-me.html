@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me - Yugandhar K</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #4E342E; /* Brown */
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            overflow-x: hidden;
+        }
+        .container {
+            max-width: 900px;
+            margin: auto;
+            background-color: #FFD717; /* Bright Yellow */
+            padding: 20px;
+            border-radius: 10px;
+            color: #4E342E;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        h2 {
+            font-size: 28px;
+            margin-bottom: 10px;
+            opacity: 0;
+            animation: slideIn 1.5s ease-in-out forwards;
+        }
+
+        p {
+            font-size: 18px;
+            line-height: 1.6;
+        }
+
+        /* Funny Quote */
+        .funny-quote {
+            font-size: 20px;
+            font-weight: bold;
+            margin: 20px auto;
+            padding: 12px;
+            background: #fcfbfb;
+            color: #070706;
+            border-radius: 8px;
+            max-width: 700px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        /* Text Animation */
+        .animated-text {
+            display: inline-block;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: textFadeIn 1s forwards;
+        }
+        
+        .profile-section {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .profile-pic {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin-right: 20px;
+            border: 5px solid #4E342E;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .text-section {
+            text-align: left;
+            max-width: 600px;
+        }
+
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .skill {
+            background-color: #4E342E;
+            color: #FFD717;
+            padding: 8px 12px;
+            border-radius: 5px;
+            font-size: 16px;
+            font-weight: bold;
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+            opacity: 0;
+            animation: slideIn 1.5s ease-in-out forwards;
+        }
+
+        .graphics-section {
+            margin-top: 20px;
+        }
+
+        .graphics-section img {
+            width: 100%;
+            max-width: 600px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Back Button */
+        .back-button {
+            display: inline-block;
+            margin-top: 20px;
+            text-decoration: none;
+            background-color: #4E342E;
+            color: #FFD717;
+            padding: 12px 18px;
+            border-radius: 5px;
+            font-size: 16px;
+            transition: 0.3s;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        .back-button:hover {
+            background-color: #D7CCC8;
+            color: #4E342E;
+        }
+
+        /* Keyframe Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes textFadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2 class="animated-text">About Me</h2>
+
+        <!-- Funny Quote -->
+        <p class="funny-quote">
+            "I am an embedded engineer. I don’t have bugs... I create features that require unexpected debugging! 😆"
+    </p>
+        </p>
+        
+        <div class="profile-section">
+            <img src="profile.jpg" alt="Yugandhar K Profile Picture" class="profile-pic">
+            <div class="text-section">
+                <p class="animated-text">Hi! I'm <b>Yugandhar K</b>, an <b>Embedded Software Engineer</b> specializing in <span class="animated-text">**firmware development**, **microcontroller programming**, and **edge AI systems**.</span></p>
+                <p class="animated-text">I love working on <b>real-time embedded solutions</b> and optimizing performance for IoT devices. With hands-on experience in **C, C++, Embedded C, and Linux**, I have developed various <b>embedded projects</b> including real-time monitoring, AI-powered systems, and automation solutions.</p>
+            </div>
+        </div>
+
+        <!-- Skills Section -->
+        <h2 class="animated-text">Technical Skills</h2>
+        <div class="skills">
+            <div class="skill">Embedded C</div>
+            <div class="skill">Microcontrollers</div>
+            <div class="skill">RTOS</div>
+            <div class="skill">Linux Kernel</div>
+            <div class="skill">I2C & SPI Communication</div>
+            <div class="skill">ADC & DAC</div>
+            <div class="skill">Python for Automation</div>
+            <div class="skill">IoT & Edge AI</div>
+        </div>
+
+        <!-- Graphics Section -->
+        <div class="graphics-section">
+            <!-- <h2 class="animated-text">My Work Process</h2> -->
+            <!-- <img src="workflow.png" alt="Work Process Flowchart"> -->
+            <!-- <p class="animated-text"><i>From ideation to deployment, I follow a structured approach to building reliable and scalable embedded solutions.</i></p> -->
+        </div>
+
+        <!-- Back Button -->
+        <a href="index.html" class="back-button">Back to Home</a>
+    </div>
+</body>
+</html>

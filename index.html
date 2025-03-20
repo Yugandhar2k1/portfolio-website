@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yugandhar K - Portfolio</title>
+
+    <!-- Font Awesome for Icons -->
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #4E342E; /* Brown */
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            font-size: 22px; /* Increased font size */
+        }
+
+        /* Header */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #FFD717; /* Yellow */
+            padding: 20px 30px; /* Slightly increased padding */
+            border-radius: 10px;
+        }
+
+        .header-left {
+            text-align: left;
+            font-size: 16px; /* Increased font size */
+            font-weight: bold;
+            color: #4E342E;
+        }
+
+        /* Animated WELCOME */
+        .welcome {
+            text-align: center;
+            font-size: 40px;
+            font-family: 'Open Montserrat ';
+            font-weight: bold;
+            color: #FFD717;
+            text-shadow: 4px 4px 10px rgba(255, 255, 255, 0.5);
+            margin-top: 50px;
+            animation: textPop 2s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes bounce {
+            from { transform: translateY(0); }
+            to { transform: translateY(-10px); }
+        }
+
+        /* Funny Quote */
+        .funny-quote {
+            font-size: 20px; /* Kept the same */
+            font-weight: bold;
+            margin: 40px auto;
+            padding: 15px;
+            background: #f5f4f3;
+            color: #4E342E;
+            border-radius: 10px;
+            max-width: 600px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);;
+        }
+
+        /* Navigation Buttons */
+        .nav-buttons {
+            margin-top: 30px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .nav-buttons a {
+            text-decoration: none;
+            background-color: #FFD717;
+            color: #4E342E;
+            padding: 14px 20px; /* Increased padding */
+            border-radius: 5px;
+            font-size: 20px; /* Increased font size */
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .nav-buttons a:hover {
+            background-color: #D7CCC8;
+            color: #4E342E;
+        }
+
+        /* Social Media Icons */
+        .social-icons {
+            margin-top: 30px;
+        }
+
+        .social-icons a {
+            color: #4E342E;
+            font-size: 32px; /* Increased Icon Size */
+            transition: 0.3s;
+        }
+
+        .social-icons a:hover {
+            color: #D7CCC8;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            margin-top: 30px;
+            padding: 12px;
+            background-color: #FFD717;
+            color: #4E342E;
+            font-size: 20px; /* Slightly increased */
+            border-radius: 5px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="header-left">
+            <h1>Yugandhar K</h1>
+            <p>Embedded Software Engineer</p>
+        </div>
+        
+        <!-- Social Media Icons in Header -->
+    <!-- Social Media Icons -->
+    <div class="social-icons">
+        <a href="https://linkedin.com/in/yugandhar2k1" target="_blank">
+            <img src="images/linkedin.png" alt="LinkedIn" width="50">
+        </a>
+        <a href="https://github.com/" target="_blank">
+            <img src="images/github.png" alt="GitHub" width="50">
+        </a>
+        <a href="https://github.com/" target="_blank">
+            <img src="images/instagram.png" alt="GitHub" width="50">
+        </a>
+        <a href="https://github.com/" target="_blank">
+            <img src="images/twitter.png" alt="GitHub" width="50">
+        </a>
+        
+    </div>
+    </header>
+
+        <!-- Navigation Buttons -->
+        <div class="nav-buttons">
+            <a href="about-me.html">About Me</a>
+            <a href="education.html">Education</a>
+            <a href="projects.html" >Projects</a>
+            <a href="paper-presentation.html">Paper Presentation</a>
+            <a href="experience.html">Experience</a>
+            <a href="contact-me.html">Contact Me</a>
+            <a href="request-sdk.html" >Request SDK</a>
+        </div>
+
+    <!-- Animated WELCOME -->
+    <h1 class="welcome">WELCOME to my Portfolio! 🎉</h1>
+
+    <!-- Funny Quote -->
+    <p class="funny-quote">
+        "Embedded systems are great... until you realize your LED blink program is running on **NASA-grade** hardware." 🚀🤣"
+    </p>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Yugandhar K. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>

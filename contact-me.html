@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Me - Yugandhar K</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #4E342E; /* Brown */
+            color: #fff;
+            text-align: center;
+            padding: 50px;
+            overflow: hidden;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: auto;
+            background-color: #FFD717; /* Yellow */
+            padding: 30px;
+            border-radius: 10px;
+            color: #4E342E;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        h2 {
+            font-size: 28px;
+            margin-bottom: 20px;
+            animation: slideIn 1.5s ease-in-out forwards;
+        }
+
+        .contact-info {
+            font-size: 18px;
+            margin: 10px 0;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        .contact-info a {
+            color: #4E342E;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+
+        .form-group {
+            text-align: left;
+            margin-top: 15px;
+            animation: fadeIn 2.5s ease-in-out;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 2px solid #4E342E;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        .send-button {
+            background-color: #4E342E;
+            color: #FFD717;
+            padding: 12px 18px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: 0.3s;
+            animation: fadeIn 3s ease-in-out;
+        }
+
+        .send-button:hover {
+            background-color: #D7CCC8;
+            color: #4E342E;
+        }
+
+        .back-button {
+            display: inline-block;
+            margin-top: 20px;
+            text-decoration: none;
+            background-color: #4E342E;
+            color: #FFD717;
+            padding: 12px 18px;
+            border-radius: 5px;
+            font-size: 16px;
+            transition: 0.3s;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        .back-button:hover {
+            background-color: #D7CCC8;
+            color: #4E342E;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Contact Me</h2>
+
+        <p class="contact-info">📧 Email: <a href="mailto:yugandhar2k1@gmail.com">yugandhar2k1@gmail.com</a></p>
+        <p class="contact-info">📞 Phone: <a href="tel:+91 8186833155">+91 8186833155</a></p>
+        <p class="contact-info">🔗 LinkedIn: <a href="https://www.linkedin.com/in/yugandhar2k1" target="_blank">linkedin.com/in/yugandhar2k1</a></p>
+
+        <form action="#" method="POST">
+            <div class="form-group">
+                <label for="name">Your Name:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Your Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+
+            <div class="form-group">
+                <label for="message">Your Message:</label>
+                <textarea id="message" name="message" rows="4" required></textarea>
+            </div>
+
+            <button type="submit" class="send-button">Send Message</button>
+        </form>
+
+        <br>
+        <a href="index.html" class="back-button">Back to Home</a>
+    </div>
+</body>
+</html>
