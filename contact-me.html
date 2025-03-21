@@ -13,7 +13,7 @@
             color: #fff;
             text-align: center;
             padding: 50px;
-            overflow: hidden;
+            overflow: auto; /* Allow scrolling */
         }
 
         .container {
@@ -49,41 +49,14 @@
             text-decoration: underline;
         }
 
-        .form-group {
-            text-align: left;
-            margin-top: 15px;
-            animation: fadeIn 2.5s ease-in-out;
-        }
-
-        label {
-            font-weight: bold;
-        }
-
-        input, textarea {
+        /* Google Form Container */
+        .google-form {
             width: 100%;
-            padding: 10px;
-            margin-top: 5px;
-            border: 2px solid #4E342E;
-            border-radius: 5px;
-            font-size: 16px;
-        }
-
-        .send-button {
-            background-color: #4E342E;
-            color: #FFD717;
-            padding: 12px 18px;
+            min-height: 700px; /* Increased height */
             border: none;
-            border-radius: 5px;
-            font-size: 16px;
-            cursor: pointer;
             margin-top: 20px;
-            transition: 0.3s;
-            animation: fadeIn 3s ease-in-out;
-        }
-
-        .send-button:hover {
-            background-color: #D7CCC8;
-            color: #4E342E;
+            border-radius: 5px;
+            overflow-y: auto;
         }
 
         .back-button {
@@ -102,6 +75,16 @@
         .back-button:hover {
             background-color: #D7CCC8;
             color: #4E342E;
+        }
+
+        /* Success Message */
+        .success-message {
+            display: none; /* Initially hidden */
+            font-size: 18px;
+            margin-top: 20px;
+            color: #2E7D32; /* Green */
+            font-weight: bold;
+            animation: fadeIn 1.5s ease-in-out;
         }
 
         /* Animations */
@@ -124,27 +107,31 @@
         <p class="contact-info">📞 Phone: <a href="tel:+91 8186833155">+91 8186833155</a></p>
         <p class="contact-info">🔗 LinkedIn: <a href="https://www.linkedin.com/in/yugandhar2k1" target="_blank">linkedin.com/in/yugandhar2k1</a></p>
 
-        <form action="#" method="POST">
-            <div class="form-group">
-                <label for="name">Your Name:</label>
-                <input type="text" id="name" name="name" required>
-            </div>
+        <!-- Embed Google Form -->
+        <iframe class="google-form" id="googleForm"
+            src="https://forms.gle/XdzZhd4fb5VGFbEd6">
+        </iframe>
 
-            <div class="form-group">
-                <label for="email">Your Email:</label>
-                <input type="email" id="email" name="email" required>
-            </div>
-
-            <div class="form-group">
-                <label for="message">Your Message:</label>
-                <textarea id="message" name="message" rows="4" required></textarea>
-            </div>
-
-            <button type="submit" class="send-button">Send Message</button>
-        </form>
+        <!-- Success Message (Hidden Initially) -->
+        <p class="success-message" id="successMessage">✅ Thank you! Your response has been submitted successfully.</p>
 
         <br>
         <a href="index.html" class="back-button">Back to Home</a>
     </div>
+
+    <script>
+        // Detect form submission and show success message
+        document.getElementById("googleForm").onload = function() {
+            let iframe = document.getElementById("googleForm");
+            let url = iframe.contentWindow.location.href;
+
+            // Check if the URL contains "formResponse" (which appears after submission)
+            if (url.includes("formResponse")) {
+                document.getElementById("googleForm").style.display = "none"; // Hide form
+                document.getElementById("successMessage").style.display = "block"; // Show success message
+            }
+        };
+    </script>
+
 </body>
 </html>

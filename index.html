@@ -13,17 +13,22 @@
             box-sizing: border-box;
             margin: 0;
             padding: 0;
+            font-family: 'Poppins', sans-serif;
         }
 
         body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            background-color: #4E342E; /* Brown */
-            color: #fff;
-            padding: 20px;
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
+                        url('images/background.jpg'); /* Dark overlay + background image */
+            background-size: cover;
             text-align: center;
-            font-size: 22px; /* Increased font size */
+            padding: 20px;
+            overflow-x: hidden;
+            background-position: center;
+            background-attachment: fixed;
+            color: white;
         }
+        
 
         /* Header */
         header {
@@ -31,27 +36,57 @@
             justify-content: space-between;
             align-items: center;
             background-color: #FFD717; /* Yellow */
-            padding: 20px 30px; /* Slightly increased padding */
+            padding: 20px;
             border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
         }
 
         .header-left {
             text-align: left;
-            font-size: 16px; /* Increased font size */
+            font-size: 18px;
             font-weight: bold;
             color: #4E342E;
         }
 
-        /* Animated WELCOME */
-        .welcome {
+        .animated-text-container {
             text-align: center;
-            font-size: 40px;
-            font-family: 'Open Montserrat ';
+            font-size: 24px;
+            font-weight: bold;
+            color: #18160a;
+            padding: 10px;
+            animation: fadeInOut 3s infinite alternate;
+        }
+        
+        /* Animation for the text */
+        @keyframes fadeInOut {
+            0% { opacity: 0; transform: translateY(-10px); }
+            50% { opacity: 1; transform: translateY(0); }
+            100% { opacity: 0.5; transform: translateY(5px); }
+        }
+        
+
+        /* Social Media Icons */
+        .social-icons {
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-icons a img {
+            width: 40px;
+            transition: transform 0.3s;
+        }
+
+        .social-icons a img:hover {
+            transform: scale(1.2);
+        }
+
+        /* Animated Welcome */
+        .welcome {
+            font-size: 45px;
             font-weight: bold;
             color: #FFD717;
-            text-shadow: 4px 4px 10px rgba(255, 255, 255, 0.5);
             margin-top: 50px;
-            animation: textPop 2s ease-in-out;
+            animation: fadeInOut 3s infinite alternate;
         }
 
         @keyframes fadeIn {
@@ -59,74 +94,79 @@
             to { opacity: 1; }
         }
 
-        @keyframes bounce {
-            from { transform: translateY(0); }
-            to { transform: translateY(-10px); }
-        }
-
         /* Funny Quote */
         .funny-quote {
-            font-size: 20px; /* Kept the same */
             font-weight: bold;
-            margin: 40px auto;
+            font-size: 19px;
+            color: #f0eeee;
+            background: #000000;
             padding: 15px;
-            background: #f5f4f3;
-            color: #4E342E;
             border-radius: 10px;
+            margin: 40px auto;
             max-width: 600px;
-            text-align: center;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);;
+            border-radius: 10px;
+            animation: fadeIn 2s ease-in-out;
+            box-shadow: 0 4px 8px rgb(1, 255, 1);
         }
 
         /* Navigation Buttons */
         .nav-buttons {
-            margin-top: 30px;
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
             gap: 15px;
+            margin-top: 30px;
         }
 
         .nav-buttons a {
             text-decoration: none;
             background-color: #FFD717;
             color: #4E342E;
-            padding: 14px 20px; /* Increased padding */
+            padding: 15px 25px;
             border-radius: 5px;
-            font-size: 20px; /* Increased font size */
+            font-size: 19px;
             font-weight: bold;
-            transition: 0.3s;
+            transition: background 0.3s, transform 0.2s;
         }
 
         .nav-buttons a:hover {
-            background-color: #D7CCC8;
-            color: #4E342E;
+            background-color: #f7f2f1;
+            box-shadow: 0 4px 8px rgb(30, 1, 255);
+            transform: translateY(-3px);
         }
 
-        /* Social Media Icons */
-        .social-icons {
+        .services-container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
             margin-top: 30px;
         }
-
-        .social-icons a {
-            color: #4E342E;
-            font-size: 32px; /* Increased Icon Size */
-            transition: 0.3s;
+        
+        .service-box {
+            width: 30%;
+            padding: 20px;
+            background-color: #0505055f;
+            color: #f5f2f1;
+            text-align: center;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgb(81, 247, 4);
+            transition: transform 0.3s ease-in-out;
         }
-
-        .social-icons a:hover {
-            color: #D7CCC8;
+        
+        .service-box:hover {
+            transform: scale(1.05);
         }
+        
 
         /* Footer */
         footer {
-            text-align: center;
-            margin-top: 30px;
+            margin-top: 40px;
             padding: 12px;
             background-color: #FFD717;
             color: #4E342E;
-            font-size: 20px; /* Slightly increased */
+            font-size: 18px;
             border-radius: 5px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
         }
 
     </style>
@@ -139,45 +179,66 @@
             <h1>Yugandhar K</h1>
             <p>Embedded Software Engineer</p>
         </div>
-        
-        <!-- Social Media Icons in Header -->
-    <!-- Social Media Icons -->
-    <div class="social-icons">
-        <a href="https://linkedin.com/in/yugandhar2k1" target="_blank">
-            <img src="images/linkedin.png" alt="LinkedIn" width="50">
-        </a>
-        <a href="https://github.com/" target="_blank">
-            <img src="images/github.png" alt="GitHub" width="50">
-        </a>
-        <a href="https://github.com/" target="_blank">
-            <img src="images/instagram.png" alt="GitHub" width="50">
-        </a>
-        <a href="https://github.com/" target="_blank">
-            <img src="images/twitter.png" alt="GitHub" width="50">
-        </a>
-        
-    </div>
-    </header>
 
-        <!-- Navigation Buttons -->
-        <div class="nav-buttons">
-            <a href="about-me.html">About Me</a>
-            <a href="education.html">Education</a>
-            <a href="projects.html" >Projects</a>
-            <a href="paper-presentation.html">Paper Presentation</a>
-            <a href="experience.html">Experience</a>
-            <a href="contact-me.html">Contact Me</a>
-            <a href="request-sdk.html" >Request SDK</a>
+        <div class="animated-text-container">
+            <p class="animated-text">🚀 Introducing My New Freelancing Services... Please Have a Look! 🎯</p>
+        </div>        
+        
+        <!-- Social Media Icons -->
+        <div class="social-icons">
+            <a href="https://linkedin.com/in/yugandhar2k1" target="_blank">
+                <img src="images/linkedin.png" alt="LinkedIn">
+            </a>
+            <a href="https://github.com/" target="_blank">
+                <img src="images/github.png" alt="GitHub">
+            </a>
+            <a href="https://instagram.com/" target="_blank">
+                <img src="images/instagram.png" alt="Instagram">
+            </a>
+            <a href="https://twitter.com/" target="_blank">
+                <img src="images/twitter.png" alt="Twitter">
+            </a>
         </div>
+    </header>
+    <!-- Navigation Buttons -->
+    <div class="nav-buttons">
+        <a href="about-me.html">About Me</a>
+        <a href="education.html">Education</a>
+        <a href="projects.html">Projects</a>
+        <a href="paper-presentation.html">Paper Presentation</a>
+        <a href="experience.html">Experience</a>
+        <a href="contact-me.html">Contact Me</a>
+        <a href="request-sdk.html">Request SDK</a>
+        <a href="freelancing-services.html">Freelancing Serivces</a>
+    </div>
 
-    <!-- Animated WELCOME -->
-    <h1 class="welcome">WELCOME to my Portfolio! 🎉</h1>
+    <!-- Animated Welcome -->
+    <h1 class="welcome">Welcome To My Portfolio! 🎉</h1>
 
     <!-- Funny Quote -->
     <p class="funny-quote">
-        "Embedded systems are great... until you realize your LED blink program is running on **NASA-grade** hardware." 🚀🤣"
+        "Embedded systems are great... until you realize your LED blink program is running on **NASA-grade** hardware. 🚀🤣"
     </p>
 
+    <div class="services-container">
+        <div class="service-box">
+            <h3>Embedded Projects</h3>
+            <p>Get high-quality embedded projects for college students with full guidance and documentation.</p>
+        </div>
+        <div class="service-box">
+            <h3>Simulation Kits</h3>
+            <p>Our advanced simulation kits provide a real-time embedded learning experience for students and professionals.</p>
+        </div>
+        <div class="service-box">
+            <h3>Programming Training</h3>
+            <p>Learn C, Embedded C, and hands-on coding skills to boost your career in embedded systems.</p>
+        </div>
+    </div>
+
+    <div class="nav-buttons">
+        <a href="freelancing-services.html">Freelancing Serivces</a>
+    </div>
+    
     <!-- Footer -->
     <footer>
         <p>&copy; 2025 Yugandhar K. All rights reserved.</p>
