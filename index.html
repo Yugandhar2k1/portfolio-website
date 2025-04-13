@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Yugandhar K | Home</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #000814;
+      color: white;
+    }
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.5rem 2.5rem;
+      background-color: #001D3D;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 1.7rem;
+    }
+    nav a {
+      margin-left: 2rem;
+      color: #FFD60A;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1rem;
+    }
+    nav a:hover {
+      color: #FFC300;
+    }
+    .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 5rem 5rem 5rem 7rem;
+    }
+    .left {
+      flex: 1;
+      max-width: 50%;
+      opacity: 0;
+      transform: translateX(-50px);
+      animation: slideIn 1.5s ease-out forwards;
+    }
+    @keyframes slideIn {
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+    .letter-animate span {
+      display: inline-block;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: letterFade 1s forwards;
+    }
+    @keyframes letterFade {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    .letter-animate span:nth-child(n) {
+      animation-delay: calc(0.05s * var(--i));
+    }
+    .left h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+    .left h1 {
+      font-size: 3.2rem;
+      color: #FFC300;
+    }
+    .left h3 {
+      font-size: 1.6rem;
+      color: #FFD60A;
+      margin-bottom: 1.5rem;
+    }
+    .left p {
+      font-size: 1.1rem;
+      margin-bottom: 1.5rem;
+    }
+    .social-icons a {
+      margin-right: 1.2rem;
+      color: #FFD60A;
+      font-size: 1.8rem;
+    }
+    .left .btn {
+      display: inline-block;
+      padding: 0.75rem 1.5rem;
+      margin-top: 1rem;
+      background-color: #FFC300;
+      color: black;
+      font-weight: bold;
+      border-radius: 5px;
+      text-decoration: none;
+      font-size: 1rem;
+    }
+    .right {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      animation: fadeIn 2s ease-in forwards;
+      opacity: 0;
+    }
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+      }
+    }
+    .right img {
+      width: 400px;
+      height: 400px;
+      object-fit: cover;
+      border-radius: 50%;
+      box-shadow: 0 0 20px #FFC300;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Yugandhar K | Home</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="skills.html">Skills</a>
+      <a href="projects.html">Projects</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <div class="container" id="home">
+    <div class="left">
+      <h2 class="letter-animate" id="text1"></h2>
+      <h1 class="letter-animate" id="text2"></h1>
+      <h3 class="letter-animate" id="text3"></h3>
+      <p>I work on AI edge solutions for the GPX 10 microprocessor at Ambient Scientific Ind Ltd. Passionate about embedded systems and real-time data solutions.</p>
+      <div class="social-icons">
+        <a href="https://github.com/yugandharkotla" target="_blank"><i class="fab fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/yugandhar2k1" target="_blank"><i class="fab fa-linkedin"></i></a>
+        <a href="https://twitter.com/yugandhark01" target="_blank"><i class="fab fa-twitter"></i></a>
+        <a href="https://www.hackerrank.com/yugandharkotla" target="_blank"><i class="fab fa-hackerrank"></i></a>
+        <a href="https://www.hackerearth.com/@yugandharkotla" target="_blank"><i class="fab fa-hackerearth"></i></a>
+      </div>
+      <a class="btn" href="https://drive.google.com/file/d/1g7QWLODEMiPy-7az2LOnWOTC-96vjEBR/view?usp=sharing" target="_blank">Download Resume</a>
+    </div>
+    <div class="right">
+      <img src="profile.jpg" alt="Yugandhar K Photo">
+    </div>
+  </div>
+
+<script>
+  function animateText(id, text) {
+    const container = document.getElementById(id);
+    container.innerHTML = '';
+    text.split('').forEach((char, i) => {
+      const span = document.createElement('span');
+      span.style.setProperty('--i', i);
+      span.textContent = char === ' ' ? '\u00A0' : char; // Use non-breaking space for spaces
+      container.appendChild(span);
+    });
+  }
+
+  animateText('text1', "Hello, It's Me");
+  animateText('text2', "Yugandhar K");
+  animateText('text3', "And I'm an Embedded Engineer");
+</script>
+
+</body>
+</html>
