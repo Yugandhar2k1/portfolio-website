@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Yugandhar K | About</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #213448;
+      color: #ECEFCA;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.5rem 2.5rem;
+      background-color: #011730;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 1.7rem;
+    }
+
+    header h1 span {
+      color: #FFD60A;
+    }
+
+    nav a {
+      margin-left: 2rem;
+      color: #FFD60A;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    nav a:hover {
+      color: #FFC300;
+    }
+
+    .about-section {
+      padding: 4rem 2rem;
+      max-width: 1000px;
+      margin: auto;
+      line-height: 1.8;
+    }
+    .download-btn {
+    background-color: #020202;
+    color: #01060c;
+    padding: 0.8rem 1.5rem;
+    border-radius: 0.5rem;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1rem;
+    display: inline-block;
+    border: none;
+    }
+
+    .about-section h2 {
+      font-size: 2.5rem;
+      text-align: center;
+      margin-bottom: 2rem;
+      color: #FFD60A;
+    }
+
+    .experience-counter {
+      text-align: center;
+      font-size: 1.2rem;
+      background-color: rgba(255, 255, 255, 0.05);
+      padding: 1rem 2rem;
+      border-radius: 1rem;
+      margin-bottom: 2rem;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      color: #FFD60A;
+      font-weight: 600;
+    }
+
+    .about-text {
+      font-size: 1.1rem;
+      background-color: rgba(255, 255, 255, 0.05);
+      padding: 2rem;
+      border-radius: 1rem;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .about-text a {
+      color: #FFD60A;
+      text-decoration: underline;
+    }
+
+    .about-text a:hover {
+      color: #FFC300;
+    }
+
+    @media (max-width: 600px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      nav {
+        margin-top: 1rem;
+      }
+      nav a {
+        display: inline-block;
+        margin: 0.5rem 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Yugandhar K | About</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="skills.html">Skills</a>
+      <a href="projects.html">Projects</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <section class="about-section">
+    <h2>About Me</h2>
+    
+    <div class="experience-counter" id="experience-counter">
+      <!-- Experience days counter will be injected here -->
+    </div>
+
+    <div class="about-text">
+      <p>Hello! I'm <strong>Yugandhar K</strong>, an Embedded Software Engineer with a strong passion for building real-world systems that combine hardware and software seamlessly. With a background in Electronics and Communication Engineering (ECE), I specialize in developing embedded applications using C, Embedded C, and Python.</p>
+
+      <p>I have hands-on experience with microcontrollers like <strong>ESP32</strong> and <strong>STM32</strong>, and I'm proficient in working with <strong>RTOS, device drivers</strong>, and <strong>real-time data processing</strong>. My toolkit includes a solid foundation in <strong>Linux systems</strong>, <strong>networking concepts</strong>, and tools for edge AI development.</p>
+
+      <p>Currently, I’m working as an Embedded Engineer at <a href="https://ambientscientific.ai" target="_blank" rel="noopener noreferrer">Ambient Scientific Ind Pvt Ltd</a>, where I develop embedded solutions and work on cutting-edge projects involving AI and embedded systems.</p>
+
+      <p>Currently, I’m actively involved in projects related to embedded AI, signal processing, and automation. Whether it's low-level driver development or integrating real-time sensors with cloud/edge systems, I enjoy solving tough problems and bringing ideas to life through code.</p>
+
+      <p>I’m also passionate about sharing knowledge through workshops, bootcamps, and creating educational content for aspiring engineers and enthusiasts.</p>
+
+      <p>If you're looking for someone to collaborate with on embedded projects, course creation, or system optimization — feel free to reach out!</p>
+        <div style="text-align: center; margin-top: 2rem;">
+        <a href="https://drive.google.com/drive/u/1/folders/1lMzYPlb8KtWBWTw0K4yqrlAJCP3BWxtw" download class="download-btn">
+            <i class="fas fa-download"></i> Download Resume
+        </a>
+</div>
+
+</div>
+
+    </div>
+  </section>
+
+  <script>
+    // Your start date as Embedded Engineer: for example, Sept 1, 2023
+    const startDate = new Date('2023-09-25T00:00:00');
+
+    function calculateExperience() {
+      const now = new Date();
+      let diff = now - startDate; // milliseconds
+
+      if (diff < 0) {
+        document.getElementById('experience-counter').textContent = "Experience start date is in the future.";
+        return;
+      }
+
+      // Calculate total days
+      const totalDays = Math.floor(diff / (1000 * 60 * 60 * 24));
+
+      // Calculate years, months, days
+      let years = now.getFullYear() - startDate.getFullYear();
+      let months = now.getMonth() - startDate.getMonth();
+      let days = now.getDate() - startDate.getDate();
+
+      if (days < 0) {
+        months--;
+        days += new Date(now.getFullYear(), now.getMonth(), 0).getDate();
+      }
+
+      if (months < 0) {
+        years--;
+        months += 12;
+      }
+
+      // Format string
+      let expString = `Experience: ${years} year${years !== 1 ? 's' : ''}, ${months} month${months !== 1 ? 's' : ''}, and ${days} day${days !== 1 ? 's' : ''} as Embedded Engineer`;
+
+      document.getElementById('experience-counter').textContent = expString;
+    }
+
+    calculateExperience();
+  </script>
+</body>
+</html>

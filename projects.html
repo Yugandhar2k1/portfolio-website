@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Yugandhar K | Projects</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #213448;
+      color: #ECEFCA;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.5rem 2.5rem;
+      background-color: #011730;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 1.7rem;
+    }
+
+    header h1 span {
+      color: #FFD60A;
+    }
+
+    nav a {
+      margin-left: 2rem;
+      color: #FFD60A;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    nav a:hover {
+      color: #FFC300;
+    }
+
+    .projects-section {
+      padding: 4rem 2rem;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .projects-section h2 {
+      font-size: 2.5rem;
+      text-align: center;
+      margin-bottom: 3rem;
+      color: #FFD60A;
+    }
+
+    .project-card {
+      background-color: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 1rem;
+      padding: 1.5rem;
+      margin-bottom: 2rem;
+    }
+
+    .project-card h3 {
+      margin-top: 0;
+      color: #FFD60A;
+    }
+
+    .project-card p {
+      margin-bottom: 0.5rem;
+    }
+
+    @media (max-width: 600px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      nav {
+        margin-top: 1rem;
+      }
+
+      nav a {
+        display: inline-block;
+        margin: 0.5rem 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Yugandhar K | Projects</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="skills.html">Skills</a>
+      <a href="projects.html">Projects</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <section class="projects-section">
+    <h2>Embedded Projects</h2>
+
+    <div class="project-card">
+      <h3>Driver Monitoring System</h3>
+      <p>Involved in implementing face detection, eye-blink, and sleep detection features using embedded algorithms.</p>
+    </div>
+
+    <div class="project-card">
+      <h3>Keyword Spotting System</h3>
+      <p>Developed keyword recognition on GPX10 microprocessor with phrases like "Help Mom", "Help Dad". Integrated ADC, SPI flash, and actuator response.</p>
+    </div>
+
+    <div class="project-card">
+      <h3>Alcohol Detection with Auto Engine Lock</h3>
+      <p>Used MQ3 sensor and embedded logic to detect alcohol and trigger engine lock system automatically.</p>
+    </div>
+
+    <div class="project-card">
+      <h3>Boat Identification Using GPS & GPRS</h3>
+      <p>Embedded solution for location tracking and boat ID transmission using GPS and GPRS modules.</p>
+    </div>
+
+    <div class="project-card">
+      <h3>IMU6050-based Fall Detection</h3>
+      <p>Captured real-time motion data from IMU6050 sensor and processed it to detect fall conditions, stored via SPI flash.</p>
+    </div>
+
+    <div class="project-card">
+      <h3>Edge AI Integration</h3>
+      <p>Implemented on-device AI inference without cloud dependency for vision and audio-based models.</p>
+    </div>
+  </section>
+</body>
+</html>
