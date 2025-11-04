@@ -6,114 +6,184 @@
   <title>Yugandhar K | About</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
   <style>
+    /* ====== Base ====== */
     body {
       margin: 0;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #213448;
-      color: #ECEFCA;
+      background-color: #A8FBD3;
+      color: #31326F;
     }
 
+    /* ====== Header ====== */
     header {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 1.5rem 2.5rem;
-      background-color: #011730;
+      padding: 1.2rem 2rem;
+      background-color: #4FB7B3;
+      position: relative;
     }
 
     header h1 {
       margin: 0;
       font-size: 1.7rem;
+      color: #31326F;
     }
 
     header h1 span {
-      color: #FFD60A;
+      color: #637AB9;
+    }
+
+    /* ====== Navigation ====== */
+    nav {
+      display: flex;
+      align-items: center;
+      transition: 0.3s ease-in-out;
     }
 
     nav a {
       margin-left: 2rem;
-      color: #FFD60A;
+      color: #31326F;
       text-decoration: none;
       font-weight: 600;
     }
 
     nav a:hover {
-      color: #FFC300;
+      color: #637AB9;
     }
 
+    /* ====== Hamburger ====== */
+    .hamburger {
+      display: none;
+      font-size: 1.8rem;
+      color: #31326F;
+      cursor: pointer;
+      background: none;
+      border: none;
+    }
+
+    /* ====== About Section ====== */
     .about-section {
       padding: 4rem 2rem;
       max-width: 1000px;
       margin: auto;
       line-height: 1.8;
     }
-    .download-btn {
-    background-color: #020202;
-    color: #01060c;
-    padding: 0.8rem 1.5rem;
-    border-radius: 0.5rem;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 1rem;
-    display: inline-block;
-    border: none;
-    }
 
     .about-section h2 {
       font-size: 2.5rem;
       text-align: center;
       margin-bottom: 2rem;
-      color: #FFD60A;
+      color: #31326F;
     }
 
     .experience-counter {
       text-align: center;
       font-size: 1.2rem;
-      background-color: rgba(255, 255, 255, 0.05);
+      background-color: rgba(99, 122, 185, 0.1);
       padding: 1rem 2rem;
       border-radius: 1rem;
       margin-bottom: 2rem;
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      color: #FFD60A;
+      border: 1px solid rgba(49, 50, 111, 0.2);
+      color: #31326F;
       font-weight: 600;
     }
 
     .about-text {
       font-size: 1.1rem;
-      background-color: rgba(255, 255, 255, 0.05);
+      background-color: rgba(99, 122, 185, 0.1);
       padding: 2rem;
       border-radius: 1rem;
-      border: 1px solid rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(49, 50, 111, 0.2);
+      color: #31326F;
     }
 
     .about-text a {
-      color: #FFD60A;
+      color: #637AB9;
       text-decoration: underline;
     }
 
     .about-text a:hover {
-      color: #FFC300;
+      color: #31326F;
     }
 
-    @media (max-width: 600px) {
+    .download-btn {
+      background-color: #e4df9a;
+      color: #ffffff;
+      padding: 0.8rem 1.5rem;
+      border-radius: 0.5rem;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1rem;
+      display: inline-block;
+      border: none;
+      transition: 0.3s ease;
+    }
+
+    .download-btn:hover {
+      background-color: #31326F;
+      color: #ffffff;
+    }
+
+    /* ====== Responsive Design ====== */
+    @media (max-width: 768px) {
       header {
-        flex-direction: column;
-        align-items: flex-start;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
       }
+
+      .hamburger {
+        display: block;
+      }
+
       nav {
-        margin-top: 1rem;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background-color: #4FB7B3;
+        width: 100%;
+        flex-direction: column;
+        text-align: center;
+        max-height: 0;
+        overflow: hidden;
       }
+
       nav a {
-        display: inline-block;
-        margin: 0.5rem 0;
+        margin: 1rem 0;
+        font-size: 1rem;
+        color: #31326F;
+      }
+
+      nav.active {
+        max-height: 300px; /* expands the slider */
+        padding: 1rem 0;
+      }
+
+      .about-section {
+        padding: 2rem 1rem;
+      }
+
+      .about-section h2 {
+        font-size: 2rem;
+      }
+
+      .about-text {
+        font-size: 1rem;
+      }
+
+      .download-btn {
+        font-size: 0.9rem;
+        padding: 0.7rem 1.2rem;
       }
     }
   </style>
 </head>
 <body>
   <header>
-    <h1>Yugandhar K | About</h1>
-    <nav>
+    <h1><span>Yugandhar K</span> | About</h1>
+    <button class="hamburger" id="menu-btn"><i class="fas fa-bars"></i></button>
+    <nav id="nav-menu">
       <a href="index.html">Home</a>
       <a href="about.html">About</a>
       <a href="skills.html">Skills</a>
@@ -124,7 +194,7 @@
 
   <section class="about-section">
     <h2>About Me</h2>
-    
+
     <div class="experience-counter" id="experience-counter">
       <!-- Experience days counter will be injected here -->
     </div>
@@ -134,38 +204,36 @@
 
       <p>I have hands-on experience with microcontrollers like <strong>ESP32</strong> and <strong>STM32</strong>, and I'm proficient in working with <strong>RTOS, device drivers</strong>, and <strong>real-time data processing</strong>. My toolkit includes a solid foundation in <strong>Linux systems</strong>, <strong>networking concepts</strong>, and tools for edge AI development.</p>
 
-      <p>Currently, I’m working as an Embedded Engineer at <a href="https://ambientscientific.ai" target="_blank" rel="noopener noreferrer">Ambient Scientific Ind Pvt Ltd</a>, where I develop embedded solutions and work on cutting-edge projects involving AI and embedded systems.</p>
+      <p>Currently, I’m working as an Embedded Engineer at 
+        <a href="https://ambientscientific.ai" target="_blank" rel="noopener noreferrer">
+          Ambient Scientific Ind Pvt Ltd
+        </a>, where I develop embedded solutions and work on cutting-edge projects involving AI and embedded systems.
+      </p>
 
-      <p>Currently, I’m actively involved in projects related to embedded AI, signal processing, and automation. Whether it's low-level driver development or integrating real-time sensors with cloud/edge systems, I enjoy solving tough problems and bringing ideas to life through code.</p>
+      <p>I’m actively involved in projects related to embedded AI, signal processing, and automation. Whether it's low-level driver development or integrating real-time sensors with cloud/edge systems, I enjoy solving tough problems and bringing ideas to life through code.</p>
 
       <div style="text-align: center; margin-top: 2rem;">
-        <a href="https://drive.google.com/drive/u/1/folders/1lMzYPlb8KtWBWTw0K4yqrlAJCP3BWxtw" download class="download-btn">
-            <i class="fas fa-download"></i> Download Resume
+        <a href="https://drive.google.com/drive/u/1/folders/1lMzYPlb8KtWBWTw0K4yqrlAJCP3BWxtw" 
+           download class="download-btn">
+          <i class="fas fa-download"></i> Download Resume
         </a>
-</div>
-
-</div>
-
+      </div>
     </div>
   </section>
 
   <script>
-    // Your start date as Embedded Engineer: for example, Sept 1, 2023
+    // ====== Experience Counter ======
     const startDate = new Date('2023-09-25T00:00:00');
 
     function calculateExperience() {
       const now = new Date();
-      let diff = now - startDate; // milliseconds
-
+      let diff = now - startDate;
       if (diff < 0) {
         document.getElementById('experience-counter').textContent = "Experience start date is in the future.";
         return;
       }
 
-      // Calculate total days
       const totalDays = Math.floor(diff / (1000 * 60 * 60 * 24));
-
-      // Calculate years, months, days
       let years = now.getFullYear() - startDate.getFullYear();
       let months = now.getMonth() - startDate.getMonth();
       let days = now.getDate() - startDate.getDate();
@@ -174,19 +242,27 @@
         months--;
         days += new Date(now.getFullYear(), now.getMonth(), 0).getDate();
       }
-
       if (months < 0) {
         years--;
         months += 12;
       }
 
-      // Format string
       let expString = `Experience: ${years} year${years !== 1 ? 's' : ''}, ${months} month${months !== 1 ? 's' : ''}, and ${days} day${days !== 1 ? 's' : ''} as Embedded Engineer`;
-
       document.getElementById('experience-counter').textContent = expString;
     }
 
     calculateExperience();
+
+    // ====== Mobile Menu Toggle ======
+    const menuBtn = document.getElementById("menu-btn");
+    const navMenu = document.getElementById("nav-menu");
+
+    menuBtn.addEventListener("click", () => {
+      navMenu.classList.toggle("active");
+      menuBtn.innerHTML = navMenu.classList.contains("active")
+        ? '<i class="fas fa-times"></i>'
+        : '<i class="fas fa-bars"></i>';
+    });
   </script>
 </body>
 </html>

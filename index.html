@@ -1,34 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Yugandhar K | Home</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
+    /* ---- Colors / base (your palette) ---- */
     body {
       margin: 0;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #213448;
-      color: #ECEFCA;
+      background-color: #A8FBD3;
+      color: #31326F;
     }
 
+    /* ====== Header ====== */
     header {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 1.5rem 2.5rem;
-      background-color: #011730;
+      padding: 1.2rem 2rem;
+      background-color: #4FB7B3;
       position: relative;
     }
-
-    .logo {
-      font-size: 1.7rem;
-      margin: 0;
-      color: #ECEFCA;
+    .experience-counter {
+      text-align: center;
+      font-size: 1.2rem;
+      background-color: #ffffff;
+      padding: 1rem 2rem;
+      border-radius: 1rem;
+      margin-bottom: 2rem;
+      border: 1px solid #637AB9; /* accent border */
+      color: #31326F;
+      font-weight: 600;
     }
 
-    /* Navbar links */
+
+    header h1 {
+      margin: 0;
+      font-size: 1.7rem;
+      color: #31326F;
+    }
+
+        header h1 span {
+      color: #637AB9;
+    }
+
     nav {
       display: flex;
       align-items: center;
@@ -36,55 +53,70 @@
 
     nav a {
       margin-left: 2rem;
-      color: #FFD60A;
+      color: #31326F;
       text-decoration: none;
       font-weight: bold;
       font-size: 1rem;
-      transition: color 0.3s ease;
     }
-
     nav a:hover {
-      color: #FFC300;
+      color: #637AB9;
     }
 
-    /* Hamburger button (mobile only) */
-    .menu-toggle {
+    /* Hamburger icon (desktop hidden, shown on mobile) */
+    .menu-icon {
       display: none;
-      flex-direction: column;
+      font-size: 1.8rem;
+      color: #31326F;
       cursor: pointer;
     }
 
-    .menu-toggle span {
-      width: 25px;
-      height: 3px;
-      background: #FFD60A;
-      margin: 4px 0;
-      transition: 0.4s;
+    /* Mobile slide-in nav */
+    .mobile-nav {
+      position: fixed;
+      top: 0;
+      right: -100%;
+      width: 72%;
+      max-width: 380px;
+      height: 100%;
+      background-color: #4FB7B3;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      transition: right 0.28s cubic-bezier(.2,.9,.2,1);
+      z-index: 9999;
+      box-shadow: -6px 0 20px rgba(0,0,0,0.12);
+    }
+    .mobile-nav.active {
+      right: 0;
+    }
+    .mobile-nav a {
+      color: #31326F;
+      text-decoration: none;
+      font-size: 1.4rem;
+      margin: 1rem 0;
+      font-weight: 700;
     }
 
-    .menu-toggle.active span:nth-child(1) {
-      transform: rotate(45deg) translate(5px, 5px);
-    }
-    .menu-toggle.active span:nth-child(2) {
+    /* Overlay when mobile nav open */
+    .mobile-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.35);
       opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.28s ease, visibility 0.28s ease;
+      z-index: 9998;
     }
-    .menu-toggle.active span:nth-child(3) {
-      transform: rotate(-45deg) translate(5px, -5px);
-    }
-
-    .experience-counter {
-      text-align: center;
-      font-size: 1.2rem;
-      background-color: #011730;
-      padding: 1rem 2rem;
-      border-radius: 1rem;
-      margin: 2rem auto;
-      border: 1px solid #ECEFCA;
-      color: #FFD60A;
-      font-weight: 600;
-      width: fit-content;
+    .mobile-overlay.active {
+      opacity: 1;
+      visibility: visible;
     }
 
+    /* ---- Your original layout & animations preserved ---- */
     .container {
       display: flex;
       justify-content: space-between;
@@ -128,40 +160,48 @@
     .left h2 {
       font-size: 2rem;
       margin-bottom: 1rem;
+      color: #637AB9;
     }
 
     .left h1 {
       font-size: 3.2rem;
-      color: #FFC300;
+      color: #31326F;
     }
 
     .left h3 {
       font-size: 1.6rem;
-      color: #FFD60A;
+      color: #637AB9;
       margin-bottom: 1.5rem;
     }
 
     .left p {
       font-size: 1.1rem;
       margin-bottom: 1.5rem;
+      color: #31326F;
     }
 
     .social-icons a {
       margin-right: 1.2rem;
-      color: #FFD60A;
+      color: #31326F;
       font-size: 1.8rem;
+    }
+    .social-icons a:hover {
+      color: #637AB9;
     }
 
     .left .btn {
       display: inline-block;
       padding: 0.75rem 1.5rem;
       margin-top: 1rem;
-      background-color: #FFC300;
-      color: black;
+      background-color: #637AB9;
+      color: #ffffff;
       font-weight: bold;
       border-radius: 5px;
       text-decoration: none;
       font-size: 1rem;
+    }
+    .left .btn:hover {
+      background-color: #31326F;
     }
 
     .right {
@@ -172,7 +212,6 @@
       animation: fadeIn 2s ease-in forwards;
       opacity: 0;
     }
-
     @keyframes fadeIn {
       to {
         opacity: 1;
@@ -184,142 +223,68 @@
       height: 400px;
       object-fit: cover;
       border-radius: 50%;
-      box-shadow: 0 0 20px #FFC300;
+      box-shadow: 0 0 20px #637AB9;
     }
 
-    /* -------------------- Responsive Design -------------------- */
-
+    /* ---- Responsive Design & mobile slider behaviour ---- */
     @media (max-width: 1024px) {
       .container {
         padding: 3rem 2rem;
       }
-      .left h1 {
-        font-size: 2.5rem;
-      }
-      .left h2 {
-        font-size: 1.5rem;
-      }
-      .left h3 {
-        font-size: 1.3rem;
-      }
-      .right img {
-        width: 300px;
-        height: 300px;
-      }
+      .left h1 { font-size: 2.5rem; }
+      .left h2 { font-size: 1.5rem; }
+      .left h3 { font-size: 1.3rem; }
+      .right img { width: 300px; height: 300px; }
     }
 
     @media (max-width: 768px) {
       header {
-        flex-direction: column;
-        text-align: center;
+        padding: 1rem 1.25rem;
       }
-
-      .menu-toggle {
-        display: flex;
-        position: absolute;
-        right: 2rem;
-        top: 1.5rem;
-      }
-
-      nav {
-        display: none;
-        flex-direction: column;
-        background-color: #011730;
-        width: 100%;
-        padding: 1rem 0;
-      }
-
-      nav.active {
-        display: flex;
-      }
-
-      nav a {
-        margin: 0.8rem 0;
-        font-size: 1rem;
-      }
-
+      nav { display: none; } /* hide original nav on mobile */
+      .menu-icon { display: block; }
       .container {
         flex-direction: column;
-        text-align: center;
-        padding: 2rem 1rem;
+        padding: 2rem;
       }
-
-      .left, .right {
+      .left {
         max-width: 100%;
+        text-align: center;
       }
-
       .right img {
         width: 250px;
         height: 250px;
         margin-top: 2rem;
       }
-
-      .left h1 {
-        font-size: 2.2rem;
-      }
-
-      .left h3 {
-        font-size: 1.2rem;
+      .experience-counter {
+        margin: 1.25rem auto;
       }
     }
 
     @media (max-width: 480px) {
-      header {
-        padding: 1rem;
-      }
-
-      .logo {
-        font-size: 1.3rem;
-      }
-
-      .container {
-        padding: 1.5rem 1rem;
-      }
-
-      .left h1 {
-        font-size: 1.8rem;
-      }
-
-      .left h2 {
-        font-size: 1.2rem;
-      }
-
-      .left h3 {
-        font-size: 1rem;
-      }
-
-      .left p {
-        font-size: 0.95rem;
-      }
-
-      .left .btn {
-        font-size: 0.9rem;
-        padding: 0.6rem 1.2rem;
-      }
-
-      .right img {
-        width: 200px;
-        height: 200px;
-      }
-
-      .experience-counter {
-        font-size: 0.9rem;
-        padding: 0.7rem 1rem;
-        margin: 1rem;
-      }
+      header { padding: 0.9rem 1rem; }
+      header h1 { font-size: 1.2rem; }
+      nav a { display: inline-block; margin: 0.4rem; font-size: 0.9rem; }
+      .container { padding: 1.5rem 1rem; }
+      .left h1 { font-size: 1.8rem; }
+      .left h2 { font-size: 1.2rem; }
+      .left h3 { font-size: 1rem; }
+      .left p { font-size: 0.95rem; }
+      .left .btn { font-size: 0.9rem; padding: 0.6rem 1.2rem; }
+      .right img { width: 200px; height: 200px; }
+      .experience-counter { font-size: 0.9rem; padding: 0.7rem 1rem; margin: 1rem; }
     }
   </style>
 </head>
 <body>
-
   <header>
-    <h1 class="logo">Yugandhar K | Home</h1>
-    <div class="menu-toggle" id="menu-toggle">
-      <span></span>
-      <span></span>
-      <span></span>
-    </div>
-    <nav id="navbar">
+    <h1>Yugandhar K | Home</h1>
+
+    <!-- hamburger icon (visible on mobile) -->
+    <i class="fas fa-bars menu-icon" id="menu-toggle" aria-label="Open menu" role="button"></i>
+
+    <!-- original nav (kept exactly) -->
+    <nav>
       <a href="index.html">Home</a>
       <a href="about.html">About</a>
       <a href="skills.html">Skills</a>
@@ -328,39 +293,56 @@
     </nav>
   </header>
 
-  <div class="experience-counter" id="experience-counter"></div>
+  <!-- Mobile sliding nav (added) -->
+  <div class="mobile-nav" id="mobile-nav" aria-hidden="true">
+    <a href="index.html" class="mobile-link">Home</a>
+    <a href="about.html" class="mobile-link">About</a>
+    <a href="skills.html" class="mobile-link">Skills</a>
+    <a href="projects.html" class="mobile-link">Projects</a>
+    <a href="contact.html" class="mobile-link">Contact</a>
+  </div>
+
+  <!-- overlay (to close mobile nav when clicking outside) -->
+  <div class="mobile-overlay" id="mobile-overlay" tabindex="-1"></div>
+
+  <div class="experience-counter" id="experience-counter">
+    <!-- Experience days counter will be injected here -->
+  </div>
 
   <div class="container" id="home">
     <div class="left">
       <h2 class="letter-animate" id="text1"></h2>
       <h1 class="letter-animate" id="text2"></h1>
       <h3 class="letter-animate" id="text3"></h3>
-      <p>I design and develop innovative embedded solutions that connect hardware with intelligence.
-          With hands-on experience in <b>Embedded C, C++, RTOS, and device drivers</b>, I work on <b>real-time 
-          systems involving sensors, microcontrollers, and communication protocols</b>.</p>
+      <p>
+        <b>I design and develop innovative embedded solutions that connect hardware with intelligence.
+        With hands-on experience in Embedded C, C++, RTOS, and device drivers, I work on real-time 
+        systems involving sensors, microcontrollers, and communication protocols.</b>
+      </p>
       <div class="social-icons">
-        <a href="https://github.com/Yugandhar2k1" target="_blank"><i class="fab fa-github"></i></a>
-        <a href="https://www.linkedin.com/in/yugandhar2k1" target="_blank"><i class="fab fa-linkedin"></i></a>
-        <a href="https://x.com/yugandhar_2k1" target="_blank"><i class="fab fa-twitter"></i></a>
-        <a href="https://www.hackerrank.com/profile/yugandhar2k1" target="_blank"><i class="fab fa-hackerrank"></i></a>
-        <a href="https://www.hackerearth.com/@yugandhar_2k1/" target="_blank"><i class="fab fa-hackerearth"></i></a>
+        <a href="https://github.com/Yugandhar2k1" target="_blank" rel="noopener"><i class="fab fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/yugandhar2k1" target="_blank" rel="noopener"><i class="fab fa-linkedin"></i></a>
+        <a href="https://x.com/yugandhar_2k1" target="_blank" rel="noopener"><i class="fab fa-twitter"></i></a>
+        <a href="https://www.hackerrank.com/profile/yugandhar2k1" target="_blank" rel="noopener"><i class="fab fa-hackerrank"></i></a>
+        <a href="https://www.hackerearth.com/@yugandhar_2k1/" target="_blank" rel="noopener"><i class="fab fa-hackerearth"></i></a>
       </div>
-      <a class="btn" href="https://drive.google.com/file/d/1GtuWObWlKTo4NN5d2ZIk1W5I9FSriBzq/view?usp=sharing" target="_blank">Download Resume</a>
+      <a class="btn" href="https://drive.google.com/file/d/1GtuWObWlKTo4NN5d2ZIk1W5I9FSriBzq/view?usp=sharing" target="_blank" rel="noopener">Download Resume</a>
     </div>
+
     <div class="right">
       <img src="Profile_2.jpg" alt="Yugandhar K Photo">
     </div>
   </div>
 
   <script>
-    // Text animation
+    // ---------------- letter animation (unchanged) ----------------
     function animateText(id, text) {
       const container = document.getElementById(id);
       container.innerHTML = '';
       text.split('').forEach((char, i) => {
         const span = document.createElement('span');
         span.style.setProperty('--i', i);
-        span.textContent = char === ' ' ? '\u00A0' : char;
+        span.textContent = char === ' ' ? '\u00A0' : char; // Use non-breaking space for spaces
         container.appendChild(span);
       });
     }
@@ -369,19 +351,22 @@
     animateText('text2', "Yugandhar K");
     animateText('text3', "And I'm an Embedded Engineer");
 
-    // Experience counter
+    // ---------------- experience counter (unchanged) ----------------
     const startDate = new Date('2023-09-25T00:00:00');
 
     function calculateExperience() {
       const now = new Date();
-      let diff = now - startDate;
+      let diff = now - startDate; // milliseconds
 
       if (diff < 0) {
         document.getElementById('experience-counter').textContent = "Experience start date is in the future.";
         return;
       }
 
+      // Calculate total days
       const totalDays = Math.floor(diff / (1000 * 60 * 60 * 24));
+
+      // Calculate years, months, days
       let years = now.getFullYear() - startDate.getFullYear();
       let months = now.getMonth() - startDate.getMonth();
       let days = now.getDate() - startDate.getDate();
@@ -396,21 +381,59 @@
         months += 12;
       }
 
-      document.getElementById('experience-counter').textContent =
-        `Experience: ${years} year${years !== 1 ? 's' : ''}, ${months} month${months !== 1 ? 's' : ''}, and ${days} day${days !== 1 ? 's' : ''} as Embedded Engineer | Firmware Developer`;
+      // Format string
+      let expString = `Experience: ${years} year${years !== 1 ? 's' : ''}, ${months} month${months !== 1 ? 's' : ''}, and ${days} day${days !== 1 ? 's' : ''} as Embedded Engineer | Firmware Developer`;
+
+      document.getElementById('experience-counter').textContent = expString;
     }
 
     calculateExperience();
 
-    // Hamburger menu toggle
+    // ---------------- mobile slider (fixed) ----------------
     const menuToggle = document.getElementById('menu-toggle');
-    const navbar = document.getElementById('navbar');
+    const mobileNav  = document.getElementById('mobile-nav');
+    const mobileOverlay = document.getElementById('mobile-overlay');
 
-    menuToggle.addEventListener('click', () => {
-      menuToggle.classList.toggle('active');
-      navbar.classList.toggle('active');
+    // toggle function
+    function toggleMobileNav(open) {
+      if (open === undefined) open = !mobileNav.classList.contains('active');
+      if (open) {
+        mobileNav.classList.add('active');
+        mobileOverlay.classList.add('active');
+        mobileNav.setAttribute('aria-hidden', 'false');
+      } else {
+        mobileNav.classList.remove('active');
+        mobileOverlay.classList.remove('active');
+        mobileNav.setAttribute('aria-hidden', 'true');
+      }
+    }
+
+    // open/close on icon click
+    if (menuToggle) {
+      menuToggle.addEventListener('click', () => toggleMobileNav());
+    }
+
+    // close when clicking overlay
+    mobileOverlay.addEventListener('click', () => toggleMobileNav(false));
+
+    // close when clicking any mobile nav link (improves UX)
+    document.querySelectorAll('.mobile-nav .mobile-link').forEach(link => {
+      link.addEventListener('click', () => toggleMobileNav(false));
+    });
+
+    // optional: close mobile nav on escape key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && mobileNav.classList.contains('active')) {
+        toggleMobileNav(false);
+      }
+    });
+
+    // ensure nav hidden when resizing up to desktop
+    window.addEventListener('resize', () => {
+      if (window.innerWidth > 768 && mobileNav.classList.contains('active')) {
+        toggleMobileNav(false);
+      }
     });
   </script>
-
 </body>
 </html>

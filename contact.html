@@ -6,54 +6,109 @@
   <title>Contact | Yugandhar K</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
   <style>
+    /* ---------- Base Styling ---------- */
     body {
       margin: 0;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #213448;
-      color: #ECEFCA;
+      background-color: #A8FBD3; /* Body color */
+      color: #31326F; /* Text color */
     }
 
+    /* ---------- Header ---------- */
     header {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 1.5rem 2.5rem;
-      background-color: #011730;
+      padding: 1.2rem 2rem;
+      background-color: #4FB7B3; /* Header color */
+      position: relative;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
     }
 
     header h1 {
       margin: 0;
-      font-size: 1.7rem;
+      font-size: 1.6rem;
+      color: #31326F;
     }
 
     header h1 span {
-      color: #FFD60A;
+      color: #637AB9;
+    }
+
+    /* ---------- Navigation ---------- */
+    nav {
+      display: flex;
+      gap: 2rem;
     }
 
     nav a {
-      margin-left: 2rem;
-      color: #FFD60A;
+      color: #31326F;
       text-decoration: none;
       font-weight: 600;
+      transition: color 0.2s ease;
     }
 
     nav a:hover {
-      color: #FFC300;
+      color: #637AB9;
     }
 
+    /* ---------- Hamburger ---------- */
+    .menu-icon {
+      display: none;
+      font-size: 1.8rem;
+      color: #31326F;
+      cursor: pointer;
+    }
+
+    .nav-links {
+      display: flex;
+      transition: 0.3s ease;
+    }
+
+    /* ---------- Mobile Menu ---------- */
+    @media (max-width: 768px) {
+      .menu-icon {
+        display: block;
+      }
+
+      .nav-links {
+        flex-direction: column;
+        position: absolute;
+        top: 70px;
+        right: -100%;
+        background-color: #4FB7B3;
+        width: 200px;
+        text-align: right;
+        padding: 1rem;
+        border-radius: 0.5rem;
+        transition: right 0.4s ease;
+      }
+
+      .nav-links.active {
+        right: 10px;
+      }
+
+      .nav-links a {
+        display: block;
+        margin: 0.8rem 0;
+      }
+    }
+
+    /* ---------- Contact Section ---------- */
     .contact-section {
       max-width: 800px;
       margin: 4rem auto;
       padding: 2rem;
-      background-color: rgba(255, 255, 255, 0.05);
-      border: 1px solid rgba(255, 255, 255, 0.1);
+      background-color: rgba(255, 255, 255, 0.6);
+      border: 1px solid rgba(99, 122, 185, 0.3);
       border-radius: 1rem;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
     }
 
     .contact-section h2 {
       text-align: center;
-      font-size: 2.5rem;
-      color: #FFD60A;
+      font-size: 2.3rem;
+      color: #31326F;
       margin-bottom: 2rem;
     }
 
@@ -61,35 +116,30 @@
       display: flex;
       align-items: center;
       margin: 1rem 0;
+      word-break: break-word;
+      color: #31326F;
     }
 
     .contact-item i {
       margin-right: 1rem;
       font-size: 1.3rem;
-      color: #FFD60A;
+      color: #637AB9;
       width: 30px;
     }
 
-    .contact-item span {
+    .contact-item span, 
+    .contact-item a {
       font-size: 1.2rem;
-      word-break: break-word;
+      color: #31326F;
+      text-decoration: none;
+    }
+
+    .contact-item a:hover {
+      text-decoration: underline;
+      color: #637AB9;
     }
 
     @media (max-width: 600px) {
-      header {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-
-      nav {
-        margin-top: 1rem;
-      }
-
-      nav a {
-        display: inline-block;
-        margin: 0.5rem 0;
-      }
-
       .contact-item {
         flex-direction: column;
         align-items: flex-start;
@@ -103,9 +153,9 @@
 </head>
 <body>
   <header>
-        <h1>Yugandhar K | Contact</h1>
-
-    <nav>
+    <h1>Yugandhar K <span>| Contact</span></h1>
+    <i class="fas fa-bars menu-icon" id="menu-toggle"></i>
+    <nav class="nav-links" id="nav-links">
       <a href="index.html">Home</a>
       <a href="about.html">About</a>
       <a href="skills.html">Skills</a>
@@ -116,17 +166,17 @@
 
   <section class="contact-section">
     <h2>Get in Touch</h2>
-    
+
     <div class="contact-item">
       <i class="fas fa-user"></i>
-      <span>Yugandhar K</span>
+      <span><b>Yugandhar K</span>
     </div>
-    
+
     <div class="contact-item">
       <i class="fas fa-envelope"></i>
-      <span><a href="mailto:yugandhar2k1@gmail.com" style="color:#ECEFCA; text-decoration:none;">yugandhar2k1@gmail.com</a></span>
+      <a href="mailto:yugandhar2k1@gmail.com">yugandhar2k1@gmail.com</a>
     </div>
-    
+
     <div class="contact-item">
       <i class="fas fa-phone"></i>
       <span>+91 8186833155</span>
@@ -136,11 +186,20 @@
       <i class="fas fa-phone"></i>
       <span>+91 9963193241</span>
     </div>
-    <div class="contact-item">
-        <i class="fas fa-map-marker-alt"></i>
-     <span>5-33, Jangalapalli, Irala, Kanipakam, Chittoor, Andhra Pradesh, India – 517131</span>
-    </div>
 
+    <div class="contact-item">
+      <i class="fas fa-map-marker-alt"></i>
+      <span>5-33, Jangalapalli, Irala, Kanipakam, Chittoor, Andhra Pradesh, India – 517131</span>
+    </div>
   </section>
+
+  <script>
+    const toggle = document.getElementById("menu-toggle");
+    const navLinks = document.getElementById("nav-links");
+
+    toggle.addEventListener("click", () => {
+      navLinks.classList.toggle("active");
+    });
+  </script>
 </body>
 </html>

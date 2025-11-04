@@ -3,51 +3,70 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Yugandhar K | Home</title>
+  <title>Yugandhar K | Skills</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+
   <style>
     body {
       margin: 0;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #213448;
-      color: #ECEFCA;
+      background-color: #A8FBD3;
+      color: #31326F;
     }
 
-    @keyframes gradientBG {
-      0% {background-position: 0% 50%;}
-      50% {background-position: 100% 50%;}
-      100% {background-position: 0% 50%;}
-    }
-
+    /* ====== Header ====== */
     header {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 1.5rem 2.5rem;
-      background-color: #011730;
+      padding: 1.2rem 2rem;
+      background-color: #4FB7B3;
+      position: relative;
     }
     header h1 {
       margin: 0;
       font-size: 1.7rem;
+      color: #31326F;
     }
-    header h1 span {
-      color: #FFD60A;
+
+        header h1 span {
+      color: #637AB9;
     }
-    header h1 span:nth-child(2) {
-      color: #FFC300;
+
+    /* ---------- Navigation ---------- */
+    nav {
+      display: flex;
+      gap: 1.5rem;
     }
+
     nav a {
-      margin-left: 2rem;
-      color: #FFD60A;
+      color: #31326F;
       text-decoration: none;
       font-weight: 600;
-      transition: color 0.3s ease;
+      transition: 0.3s ease;
     }
 
     nav a:hover {
-      color: #FFC300;
+      color: #31326F;
     }
 
+    /* ---------- Hamburger ---------- */
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+    }
+
+    .menu-toggle span {
+      height: 3px;
+      width: 25px;
+      background-color: white;
+      margin: 4px 0;
+      border-radius: 2px;
+      transition: 0.3s;
+    }
+
+    /* ---------- Skills Section ---------- */
     .skills-section {
       padding: 4rem 2rem;
       max-width: 1200px;
@@ -55,10 +74,10 @@
     }
 
     .skills-section h2 {
-      font-size: 2.8rem;
+      font-size: 2.5rem;
       text-align: center;
       margin-bottom: 3rem;
-      color: #FFD60A;
+      color: #31326F;
     }
 
     .skills-grid {
@@ -68,50 +87,79 @@
     }
 
     .skill-card {
-      background: rgba(255, 255, 255, 0.05);
-      backdrop-filter: blur(15px);
-      border: 1px solid rgba(255, 255, 255, 0.1);
+      background: #ffffff80;
+      backdrop-filter: blur(10px);
       border-radius: 1rem;
       padding: 2rem;
       text-align: center;
       transition: transform 0.3s, box-shadow 0.3s;
-      box-shadow: 0 0 15px rgba(255, 214, 10, 0.1);
+      border: 2px solid #4FB7B3;
+      box-shadow: 0 0 10px rgba(99, 122, 185, 0.2);
     }
 
     .skill-card:hover {
       transform: translateY(-10px);
-      box-shadow: 0 0 20px rgba(255, 214, 10, 0.6);
+      box-shadow: 0 0 20px rgba(99, 122, 185, 0.5);
     }
 
     .skill-card i {
       font-size: 2.5rem;
-      color: #FFD60A;
+      color: #637AB9;
       margin-bottom: 1rem;
     }
 
     .skill-card h3 {
-      font-size: 1.3rem;
+      font-size: 1.2rem;
+      color: #31326F;
       margin: 0;
     }
 
-    @media (max-width: 600px) {
+    /* ---------- Responsive ---------- */
+    @media (max-width: 768px) {
       header {
-        flex-direction: column;
-        align-items: flex-start;
+        flex-direction: row;
+        justify-content: space-between;
       }
+
       nav {
-        margin-top: 1rem;
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: #4FB7B3;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        z-index: 1000;
+        padding: 1rem 0;
       }
+
+      nav.active {
+        display: flex;
+      }
+
       nav a {
-        display: inline-block;
-        margin: 0.5rem 0;
+        padding: 0.8rem 2rem;
+        text-align: center;
+        color: white;
+      }
+
+      .menu-toggle {
+        display: flex;
       }
     }
   </style>
 </head>
+
 <body>
   <header>
     <h1>Yugandhar K | Skills</h1>
+
+    <div class="menu-toggle" id="mobile-menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
     <nav>
       <a href="index.html">Home</a>
       <a href="about.html">About</a>
@@ -137,5 +185,15 @@
       <div class="skill-card"><i class="fas fa-cloud"></i><h3>Edge AI</h3></div>
     </div>
   </section>
+
+  <script>
+    const menuToggle = document.getElementById('mobile-menu');
+    const nav = document.querySelector('nav');
+
+    menuToggle.addEventListener('click', () => {
+      nav.classList.toggle('active');
+      menuToggle.classList.toggle('open');
+    });
+  </script>
 </body>
 </html>
