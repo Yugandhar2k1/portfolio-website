@@ -12,44 +12,86 @@
       background-color: #213448;
       color: #ECEFCA;
     }
+
     header {
       display: flex;
       justify-content: space-between;
       align-items: center;
       padding: 1.5rem 2.5rem;
       background-color: #011730;
+      position: relative;
     }
-        .experience-counter {
-      text-align: center;
-      font-size: 1.2rem;
-      background-color: #011730;
-      padding: 1rem 2rem;
-      border-radius: 1rem;
-      margin-bottom: 2rem;
-      border: 1px solid #ECEFCA;
-      color: #FFD60A;
-      font-weight: 600;
-    }
-    header h1 {
-      margin: 0;
+
+    .logo {
       font-size: 1.7rem;
+      margin: 0;
+      color: #ECEFCA;
     }
+
+    /* Navbar links */
+    nav {
+      display: flex;
+      align-items: center;
+    }
+
     nav a {
       margin-left: 2rem;
       color: #FFD60A;
       text-decoration: none;
       font-weight: bold;
       font-size: 1rem;
+      transition: color 0.3s ease;
     }
+
     nav a:hover {
       color: #FFC300;
     }
+
+    /* Hamburger button (mobile only) */
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+    }
+
+    .menu-toggle span {
+      width: 25px;
+      height: 3px;
+      background: #FFD60A;
+      margin: 4px 0;
+      transition: 0.4s;
+    }
+
+    .menu-toggle.active span:nth-child(1) {
+      transform: rotate(45deg) translate(5px, 5px);
+    }
+    .menu-toggle.active span:nth-child(2) {
+      opacity: 0;
+    }
+    .menu-toggle.active span:nth-child(3) {
+      transform: rotate(-45deg) translate(5px, -5px);
+    }
+
+    .experience-counter {
+      text-align: center;
+      font-size: 1.2rem;
+      background-color: #011730;
+      padding: 1rem 2rem;
+      border-radius: 1rem;
+      margin: 2rem auto;
+      border: 1px solid #ECEFCA;
+      color: #FFD60A;
+      font-weight: 600;
+      width: fit-content;
+    }
+
     .container {
       display: flex;
       justify-content: space-between;
       align-items: center;
       padding: 5rem 5rem 5rem 7rem;
     }
+
     .left {
       flex: 1;
       max-width: 50%;
@@ -57,49 +99,59 @@
       transform: translateX(-50px);
       animation: slideIn 1.5s ease-out forwards;
     }
+
     @keyframes slideIn {
       to {
         opacity: 1;
         transform: translateX(0);
       }
     }
+
     .letter-animate span {
       display: inline-block;
       opacity: 0;
       transform: translateY(20px);
       animation: letterFade 1s forwards;
     }
+
     @keyframes letterFade {
       to {
         opacity: 1;
         transform: translateY(0);
       }
     }
+
     .letter-animate span:nth-child(n) {
       animation-delay: calc(0.05s * var(--i));
     }
+
     .left h2 {
       font-size: 2rem;
       margin-bottom: 1rem;
     }
+
     .left h1 {
       font-size: 3.2rem;
       color: #FFC300;
     }
+
     .left h3 {
       font-size: 1.6rem;
       color: #FFD60A;
       margin-bottom: 1.5rem;
     }
+
     .left p {
       font-size: 1.1rem;
       margin-bottom: 1.5rem;
     }
+
     .social-icons a {
       margin-right: 1.2rem;
       color: #FFD60A;
       font-size: 1.8rem;
     }
+
     .left .btn {
       display: inline-block;
       padding: 0.75rem 1.5rem;
@@ -111,6 +163,7 @@
       text-decoration: none;
       font-size: 1rem;
     }
+
     .right {
       flex: 1;
       display: flex;
@@ -119,11 +172,13 @@
       animation: fadeIn 2s ease-in forwards;
       opacity: 0;
     }
+
     @keyframes fadeIn {
       to {
         opacity: 1;
       }
     }
+
     .right img {
       width: 400px;
       height: 400px;
@@ -131,12 +186,140 @@
       border-radius: 50%;
       box-shadow: 0 0 20px #FFC300;
     }
+
+    /* -------------------- Responsive Design -------------------- */
+
+    @media (max-width: 1024px) {
+      .container {
+        padding: 3rem 2rem;
+      }
+      .left h1 {
+        font-size: 2.5rem;
+      }
+      .left h2 {
+        font-size: 1.5rem;
+      }
+      .left h3 {
+        font-size: 1.3rem;
+      }
+      .right img {
+        width: 300px;
+        height: 300px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .menu-toggle {
+        display: flex;
+        position: absolute;
+        right: 2rem;
+        top: 1.5rem;
+      }
+
+      nav {
+        display: none;
+        flex-direction: column;
+        background-color: #011730;
+        width: 100%;
+        padding: 1rem 0;
+      }
+
+      nav.active {
+        display: flex;
+      }
+
+      nav a {
+        margin: 0.8rem 0;
+        font-size: 1rem;
+      }
+
+      .container {
+        flex-direction: column;
+        text-align: center;
+        padding: 2rem 1rem;
+      }
+
+      .left, .right {
+        max-width: 100%;
+      }
+
+      .right img {
+        width: 250px;
+        height: 250px;
+        margin-top: 2rem;
+      }
+
+      .left h1 {
+        font-size: 2.2rem;
+      }
+
+      .left h3 {
+        font-size: 1.2rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      header {
+        padding: 1rem;
+      }
+
+      .logo {
+        font-size: 1.3rem;
+      }
+
+      .container {
+        padding: 1.5rem 1rem;
+      }
+
+      .left h1 {
+        font-size: 1.8rem;
+      }
+
+      .left h2 {
+        font-size: 1.2rem;
+      }
+
+      .left h3 {
+        font-size: 1rem;
+      }
+
+      .left p {
+        font-size: 0.95rem;
+      }
+
+      .left .btn {
+        font-size: 0.9rem;
+        padding: 0.6rem 1.2rem;
+      }
+
+      .right img {
+        width: 200px;
+        height: 200px;
+      }
+
+      .experience-counter {
+        font-size: 0.9rem;
+        padding: 0.7rem 1rem;
+        margin: 1rem;
+      }
+    }
   </style>
 </head>
 <body>
+
   <header>
-    <h1>Yugandhar K | Home</h1>
-    <nav>
+    <h1 class="logo">Yugandhar K | Home</h1>
+    <div class="menu-toggle" id="menu-toggle">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <nav id="navbar">
       <a href="index.html">Home</a>
       <a href="about.html">About</a>
       <a href="skills.html">Skills</a>
@@ -145,9 +328,7 @@
     </nav>
   </header>
 
-      <div class="experience-counter" id="experience-counter">
-      <!-- Experience days counter will be injected here -->
-    </div>
+  <div class="experience-counter" id="experience-counter"></div>
 
   <div class="container" id="home">
     <div class="left">
@@ -169,41 +350,36 @@
     </div>
   </div>
 
-<script>
-  function animateText(id, text) {
-    const container = document.getElementById(id);
-    container.innerHTML = '';
-    text.split('').forEach((char, i) => {
-      const span = document.createElement('span');
-      span.style.setProperty('--i', i);
-      span.textContent = char === ' ' ? '\u00A0' : char; // Use non-breaking space for spaces
-      container.appendChild(span);
-    });
-  }
-
-  animateText('text1', "Hello, It's Me");
-  animateText('text2', "Yugandhar K");
-  animateText('text3', "And I'm an Embedded Engineer");
-</script>
-
-
   <script>
-    // Your start date as Embedded Engineer: for example, Sept 1, 2023
+    // Text animation
+    function animateText(id, text) {
+      const container = document.getElementById(id);
+      container.innerHTML = '';
+      text.split('').forEach((char, i) => {
+        const span = document.createElement('span');
+        span.style.setProperty('--i', i);
+        span.textContent = char === ' ' ? '\u00A0' : char;
+        container.appendChild(span);
+      });
+    }
+
+    animateText('text1', "Hello, It's Me");
+    animateText('text2', "Yugandhar K");
+    animateText('text3', "And I'm an Embedded Engineer");
+
+    // Experience counter
     const startDate = new Date('2023-09-25T00:00:00');
 
     function calculateExperience() {
       const now = new Date();
-      let diff = now - startDate; // milliseconds
+      let diff = now - startDate;
 
       if (diff < 0) {
         document.getElementById('experience-counter').textContent = "Experience start date is in the future.";
         return;
       }
 
-      // Calculate total days
       const totalDays = Math.floor(diff / (1000 * 60 * 60 * 24));
-
-      // Calculate years, months, days
       let years = now.getFullYear() - startDate.getFullYear();
       let months = now.getMonth() - startDate.getMonth();
       let days = now.getDate() - startDate.getDate();
@@ -218,13 +394,20 @@
         months += 12;
       }
 
-      // Format string
-      let expString = `Experience: ${years} year${years !== 1 ? 's' : ''}, ${months} month${months !== 1 ? 's' : ''}, and ${days} day${days !== 1 ? 's' : ''} as Embedded Engineer | Firmware Developer`;
-
-      document.getElementById('experience-counter').textContent = expString;
+      document.getElementById('experience-counter').textContent =
+        `Experience: ${years} year${years !== 1 ? 's' : ''}, ${months} month${months !== 1 ? 's' : ''}, and ${days} day${days !== 1 ? 's' : ''} as Embedded Engineer | Firmware Developer`;
     }
 
     calculateExperience();
+
+    // Hamburger menu toggle
+    const menuToggle = document.getElementById('menu-toggle');
+    const navbar = document.getElementById('navbar');
+
+    menuToggle.addEventListener('click', () => {
+      menuToggle.classList.toggle('active');
+      navbar.classList.toggle('active');
+    });
   </script>
 
 </body>
